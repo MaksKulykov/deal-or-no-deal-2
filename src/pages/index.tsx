@@ -1,5 +1,5 @@
 import React from 'react';
-import Game from './game';
+import { Game } from './game';
 import { NUMBERS } from '../constants/constants';
 
 let numbers = (function() {
