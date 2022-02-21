@@ -50,7 +50,7 @@ export class Game extends Component<GameProps, GameState> {
     render() {
         return (
             <>
-                <Layout grid fullWidth={false}>
+                <Layout>
                     {this.renderBoxes()}
                 </Layout>
             </>
