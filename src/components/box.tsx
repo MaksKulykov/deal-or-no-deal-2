@@ -5,7 +5,7 @@ interface BoxProps {
     disabled: boolean,
     isGameFinish: boolean,
     value: string,
-    onClick: (boxNumber: number, value: string) => void
+    onClick?: (boxNumber: number, value: string) => void
 }
 
 const Box: React.FC<BoxProps> = ({boxNumber, disabled, isGameFinish, value, onClick}) => {
@@ -15,7 +15,9 @@ const Box: React.FC<BoxProps> = ({boxNumber, disabled, isGameFinish, value, onCl
         if (!disabled) {
             setTimeout(() => setVisible(!visible), 1000);
             setAnimate(!animate);
-            onClick(boxNumber, value);
+            if (onClick) {
+                onClick(boxNumber, value);
+            }
         }
     };
 
