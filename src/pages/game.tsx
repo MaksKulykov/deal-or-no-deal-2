@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout';
-import { STEPS_AMOUNT } from '../constants/constants';
+import { NUMBERS, STEPS_AMOUNT } from '../constants/constants';
 import Box from '../components/box';
+import SideBar from '../components/sideBar';
+import MoneyBox from '../components/moneyBox';
 
 interface GameProps {
     numbers: string[]
@@ -47,12 +49,36 @@ export class Game extends Component<GameProps, GameState> {
                                                                 disabled={this.state.showModal || this.state.isGameFinish} />);
     };
 
+    renderLeftMoneyList = () => {
+        let leftNumbers = [...NUMBERS].slice(0, 12);
+        return leftNumbers.map(value => <MoneyBox key={value}
+                                                  value={value}
+                                                  animate={this.state.selectedValues.includes(value)}
+                                                  reverse={true} />);
+    };
+
+    renderRightMoneyList = () => {
+        let rightNumbers = [...NUMBERS].slice(12);
+        return rightNumbers.map(value => <MoneyBox key={value}
+                                                   value={value}
+                                                   animate={this.state.selectedValues.includes(value)}
+                                                   reverse={false} />);
+    };
+
     render() {
         return (
             <>
-                <Layout>
-                    {this.renderBoxes()}
-                </Layout>
+                <div className="flex flex-row justify-center flex-nowrap">
+                    <SideBar>
+                        {this.renderLeftMoneyList()}
+                    </SideBar>
+                    <Layout>
+                        {this.renderBoxes()}
+                    </Layout>
+                    <SideBar>
+                        {this.renderRightMoneyList()}
+                    </SideBar>
+                </div>
             </>
         )
     }

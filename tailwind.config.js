@@ -36,13 +36,23 @@ module.exports = {
                 '60%': { transform: 'translate3d(-85%, -230%, 0) rotate(-25deg)' },
                 '90%': { transform: 'translate3d(-119%, 225%, 0) rotate(-70deg)' },
                 '100%': { transform: 'translate3d(-119%, 225%, 0) rotate(-70deg)' }
+            },
+            rightMoneyBoxAnim: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(120%)' }
+            },
+            leftMoneyBoxAnim: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-120%)' }
             }
         },
         animation: {
             hideBox: 'hideBox 1s ease-out',
             boxBodyAnim: 'boxBodyAnim 1s 0.5s forwards ease-in-out',
             boxValAnim: 'boxValAnim 1s 1.5s forwards ease-in-out',
-            boxLidAnim: 'boxLidAnim 1s 0.5s forwards ease-in-out'
+            boxLidAnim: 'boxLidAnim 1s 0.5s forwards ease-in-out',
+            rightMoneyBoxAnim: 'rightMoneyBoxAnim 2s ease-in-out forwards',
+            leftMoneyBoxAnim: 'leftMoneyBoxAnim 2s ease-in-out forwards',
         }
     },
   },
