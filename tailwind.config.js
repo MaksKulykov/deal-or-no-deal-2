@@ -29,8 +29,8 @@ module.exports = {
                 '70%': { transform: 'translate3d(0%, 0%, 0) rotate(0deg)' }
             },
             boxValAnim: {
-                '0%': { transform: 'translateY(0%) opacity: 0' },
-                '100%': { transform: 'translateY(-125%) opacity: 1 z-index: 0' }
+                '0%': { transform: 'translateY(0)', opacity: '0'},
+                '100%': { transform: 'translateY(-125%)', opacity: '1', zIndex: '0' }
             },
             boxLidAnim: {
                 '0%': {},
