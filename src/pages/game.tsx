@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 import Layout from '../components/layout';
-import { NUMBERS, STEPS_AMOUNT } from '../constants/constants';
+import { COEFFICIENTS, NUMBERS, STEPS_AMOUNT } from '../constants/constants';
 import Box from '../components/box';
 import SideBar from '../components/sideBar';
 import MoneyBox from '../components/moneyBox';
 import Footer from '../components/footer';
+import BankOfferModal from '../components/bankOfferModal/bankOfferModal';
+
+const el = document.getElementById('root');
+if (el) {
+    Modal.setAppElement(el);
+}
 
 interface GameProps {
     numbers: string[]
@@ -15,6 +22,7 @@ interface GameState {
     firstBoxValue: string,
     selectedValues: string[],
     showModal: boolean,
+    counter: number,
     isGameFinish: boolean
 }
 
@@ -25,6 +33,7 @@ export class Game extends Component<GameProps, GameState> {
         firstBoxValue: '',
         selectedValues: [],
         showModal: false,
+        counter: 0,
         isGameFinish: false
     }
 
@@ -73,6 +82,22 @@ export class Game extends Component<GameProps, GameState> {
                                                    value={value}
                                                    animate={this.state.selectedValues.includes(value)}
                                                    reverse={false} />);
+    };
+
+    calcBankSum = () => {
+        let sum = 0;
+        let values = [...NUMBERS];
+        values.forEach(value => {
+            if (!this.state.selectedValues.includes(value)) {
+                sum = sum + parseInt(value);
+            }
+        });
+        let value = Math.round(sum / (NUMBERS.length - this.state.selectedValues.length) / COEFFICIENTS[this.state.counter]);
+        return this.state.isGameFinish && this.state.selectedValues.length === 22 && this.state.counter === 7 ?
+            String.fromCharCode(8364) + ' ' + this.state.firstBoxValue
+                .toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") :
+            String.fromCharCode(8364) + ' ' + value
+                .toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
     };
 
     calcBoxCounter = (arr: string[]) => {
@@ -127,6 +152,24 @@ export class Game extends Component<GameProps, GameState> {
         }
     };
 
+    handleCloseModal = () => {
+        this.setState({showModal: false});
+        this.setState({counter: this.state.counter + 1});
+        if (this.state.selectedValues.length === 22) {
+            this.openEndGameModal();
+        }
+    };
+
+    handleEndGame = () => {
+        this.setState({showModal: false});
+        this.openEndGameModal();
+    };
+
+    openEndGameModal = () => {
+        this.setState({isGameFinish: true});
+        setTimeout(() => this.setState({showModal: true}), 2000);
+    };
+
     render() {
         return (
             <>
@@ -145,6 +188,11 @@ export class Game extends Component<GameProps, GameState> {
                         {this.renderRightMoneyList()}
                     </SideBar>
                 </div>
+                <BankOfferModal isOpen={this.state.showModal}
+                                isGameFinish={this.state.isGameFinish}
+                                calcBankSum={this.calcBankSum()}
+                                handleCloseModal={this.handleCloseModal}
+                                handleEndGame={this.handleEndGame} />
             </>
         )
     }

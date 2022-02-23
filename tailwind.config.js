@@ -12,7 +12,9 @@ module.exports = {
         boxBodyAfterSec: '#ffefa0',
         boxValPr: '#ffd700',
         boxValSec: '#b8860b',
-        boxLid: '#cc231e'
+        boxLid: '#cc231e',
+        buttonPr: '#696969',
+        buttonSec: '#000000'
     },
     extend: {
         keyframes: {
