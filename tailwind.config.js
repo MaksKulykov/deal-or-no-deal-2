@@ -17,6 +17,9 @@ module.exports = {
         buttonSec: '#000000'
     },
     extend: {
+        backgroundImage: theme => ({
+            'gamePageBack': "url('./static/images/background.jpeg')"
+        }),
         keyframes: {
             hideBox: {
                 '0%': { transform: 'scale(1)' },

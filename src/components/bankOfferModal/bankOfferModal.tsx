@@ -34,13 +34,13 @@ const BankOfferModal: React.FC<BankOfferModalProps> = ({isOpen, isGameFinish, ca
                             <div onClick={handleEndGame}
                                  className="w-[40%] border-none rounded px-8 py-4 font-bold text-xl text-boxValPr
                                  bg-gradient-to-b from-buttonPr to-buttonSec hover:bg-gradient-to-b hover:from-buttonSec
-                                 hover:to-buttonPr text-center">
+                                 hover:to-buttonPr text-center cursor-pointer">
                                 DEAL
                             </div>
                             <div onClick={handleCloseModal}
                                  className="w-[40%] border-none rounded px-8 py-4 font-bold text-xl text-boxValPr
                                  bg-gradient-to-b from-buttonPr to-buttonSec hover:bg-gradient-to-b hover:from-buttonSec
-                                 hover:to-buttonPr text-center">
+                                 hover:to-buttonPr text-center cursor-pointer">
                                 NO DEAL
                             </div>
                         </>
