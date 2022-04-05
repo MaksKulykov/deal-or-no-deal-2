@@ -43,7 +43,8 @@ const Box: React.FC<BoxProps> = ({boxNumber, disabled, isGameFinish, value, onCl
                         after:bg-gradient-to-b after:from-boxBodyAfterSec after:to-boxBodyAfterPr`}>
 
                         </div>
-                        <div className="absolute block bottom-[20px] z-20 w-full text-center text-[50px] font-bold">
+                        <div className="absolute block bottom-[20px] z-20 w-full text-center text-[50px] font-bold"
+                             data-testid="box-number">
                             {boxNumber}
                         </div>
                     </div>
