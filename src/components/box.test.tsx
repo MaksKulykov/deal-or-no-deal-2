@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
+import { act } from 'react-dom/test-utils';
 import { render, screen } from '@testing-library/react';
 import { wait } from '@testing-library/user-event/dist/utils';
 import userEvent from '@testing-library/user-event';
-import Box from "./box";
+import Box from './box';
 
 describe('Box component', () => {
 
@@ -16,8 +17,8 @@ describe('Box component', () => {
         render(<Box boxNumber={boxNumber} disabled={!disable} isGameFinish={isGameFinish} value={value} onClick={onClick}/>);
         const button = screen.getByTestId('box-view');
         userEvent.click(button);
-        await wait(1100)
-            .then(() => expect(screen.queryByTestId('box-wrapper')).not.toBeVisible());
+        await act(async () => wait(1100)
+            .then(() => expect(screen.queryByTestId('box-wrapper')).not.toBeVisible()));
     });
 
     test('should call onClick prop after click on box', () => {
