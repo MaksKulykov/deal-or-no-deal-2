@@ -36,7 +36,7 @@ const Box: React.FC<BoxProps> = ({boxNumber, disabled, isGameFinish, value, onCl
                          after:from-boxBodyAfterPr after:to-boxBodyAfterSec`}>
                         <div className={`block ${isGameFinish ? 'animate-boxValAnim' : ''} mx-auto my-0 opacity-0
                         text-center h-[40px] leading-[40px] font-bold bg-gradient-to-b from-boxValPr to-boxValSec`}>
-                            {String.fromCharCode(8364) + ' ' + value.toString()
+                            {String.fromCharCode(8364) + ' ' + value
                                 .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
                         </div>
                         <div className={`absolute z-10 left-[50%] -translate-x-1/2 bottom-[90%] bg-boxLid h-[20px]
