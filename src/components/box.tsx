@@ -24,9 +24,11 @@ const Box: React.FC<BoxProps> = ({boxNumber, disabled, isGameFinish, value, onCl
     return (
         <>
             <div style={{visibility: visible ? 'visible' : 'hidden'}}
-                 className="relative flex justify-center w-1/6 h-auto p-2">
+                 className="relative flex justify-center w-1/6 h-auto p-2"
+                 data-testid="box-wrapper">
                 <div className={`w-full h-full ${!disabled ? 'hover:scale-110' : ''} ${animate ? 'animate-hideBox' : ''}`}>
                     <div onClick={handleClickChild}
+                         data-testid="box-view"
                          className={`relative w-[100px] h-[100px] mt-[53.3333333333px] mx-auto rounded-b shadow-sm
                          bg-gradient-to-b from-boxBodyPr to-boxBodySec ${disabled ? 'cursor-default' : 'cursor-pointer'}
                          ${isGameFinish ? 'animate-boxBodyAnim' : ''} z-10 after:content-start after:absolute
@@ -43,8 +45,7 @@ const Box: React.FC<BoxProps> = ({boxNumber, disabled, isGameFinish, value, onCl
                         after:bg-gradient-to-b after:from-boxBodyAfterSec after:to-boxBodyAfterPr`}>
 
                         </div>
-                        <div className="absolute block bottom-[20px] z-20 w-full text-center text-[50px] font-bold"
-                             data-testid="box-number">
+                        <div className="absolute block bottom-[20px] z-20 w-full text-center text-[50px] font-bold">
                             {boxNumber}
                         </div>
                     </div>
