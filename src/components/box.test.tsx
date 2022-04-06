@@ -42,4 +42,11 @@ describe('Box component', () => {
         expect(screen.queryByTestId('box-wrapper')).toBeVisible();
     });
 
+    test('should not display box', () => {
+        render(<Box boxNumber={boxNumber} disabled={!disable} isGameFinish={isGameFinish} value={value} onClick={onClick}/>);
+        const button = screen.getByTestId('box-view');
+        userEvent.click(button);
+        expect(screen.queryByTestId('box-wrapper')).toBeVisible();
+    });
+
 });

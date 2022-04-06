@@ -4,7 +4,7 @@ import SideBar from './sideBar';
 
 describe('SideBar component', () => {
 
-    let children: null;
+    let children: any = null;
 
     test('should display layout', () => {
         render(<SideBar children={children}/>);
