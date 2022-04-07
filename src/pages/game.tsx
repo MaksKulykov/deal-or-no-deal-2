@@ -8,11 +8,6 @@ import MoneyBox from '../components/moneyBox';
 import Footer from '../components/footer';
 import BankOfferModal from '../components/bankOfferModal/bankOfferModal';
 
-const el = document.getElementById('root');
-if (el) {
-    Modal.setAppElement(el);
-}
-
 interface GameProps {
     numbers: string[]
 }
@@ -35,6 +30,10 @@ export class Game extends Component<GameProps, GameState> {
         showModal: false,
         counter: 0,
         isGameFinish: false
+    }
+
+    componentDidMount() {
+        Modal.setAppElement('body');
     }
 
     handleClick = (boxNumber: number, value: string) => {

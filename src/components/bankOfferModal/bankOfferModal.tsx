@@ -17,11 +17,13 @@ const BankOfferModal: React.FC<BankOfferModalProps> = ({isOpen, isGameFinish, ca
             isOpen={isOpen}
             style={modalStyles}
             closeTimeoutMS={300}
+            ariaHideApp={false}
         >
             <div className="text-center text-5xl">
                 {isGameFinish ? 'CONGRATULATIONS!' : 'BANK\'S OFFER'}
             </div>
-            <div className="text-center text-5xl font-bold">
+            <div className="text-center text-5xl font-bold"
+                 data-testid="modal-body">
                 {isGameFinish ? 'YOU WON' : calcBankSum}
             </div>
             <div className={`flex flex-row flex-nowrap ${isGameFinish ? 'justify-center' : 'justify-between'}`}>
