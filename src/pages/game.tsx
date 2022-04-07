@@ -172,7 +172,8 @@ export class Game extends Component<GameProps, GameState> {
     render() {
         return (
             <>
-                <div className="flex flex-row justify-center flex-nowrap overflow-hidden bg-gamePageBack">
+                <div className="flex flex-row justify-center flex-nowrap overflow-hidden bg-gamePageBack"
+                     data-testid="game-component">
                     <SideBar>
                         {this.renderLeftMoneyList()}
                     </SideBar>
