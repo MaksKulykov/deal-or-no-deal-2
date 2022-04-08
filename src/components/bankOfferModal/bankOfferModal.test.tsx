@@ -10,7 +10,7 @@ describe('BankOfferModal component', () => {
         handleCloseModal = jest.fn(),
         handleEndGame = jest.fn();
 
-    test('should display layout', () => {
+    test('should display modal', () => {
         render(<BankOfferModal isOpen={isOpen} isGameFinish={isGameFinish} calcBankSum={calcBankSum}
                                handleCloseModal={handleCloseModal} handleEndGame={handleEndGame}/>);
         expect(screen.getByTestId('modal-body')).toBeVisible();

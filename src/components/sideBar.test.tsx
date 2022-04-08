@@ -6,7 +6,7 @@ describe('SideBar component', () => {
 
     let children: any = null;
 
-    test('should display layout', () => {
+    test('should display side bar', () => {
         render(<SideBar children={children}/>);
         expect(screen.getByTestId('side-bar-wrapper')).toBeVisible();
     });

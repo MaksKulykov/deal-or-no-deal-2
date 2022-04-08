@@ -8,7 +8,7 @@ describe('MoneyBox component', () => {
         animate = true,
         reverse = true;
 
-    test('should display footer', () => {
+    test('should display money box', () => {
         render(<MoneyBox value={value} animate={animate} reverse={reverse}/>);
         expect(screen.getByTestId('money-box-wrapper')).toBeVisible();
     });

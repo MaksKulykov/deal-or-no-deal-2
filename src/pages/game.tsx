@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
 import Layout from '../components/layout';
 import { COEFFICIENTS, NUMBERS, STEPS_AMOUNT } from '../constants/constants';
 import Box from '../components/box';
@@ -30,10 +29,6 @@ export class Game extends Component<GameProps, GameState> {
         showModal: false,
         counter: 0,
         isGameFinish: false
-    }
-
-    componentDidMount() {
-        Modal.setAppElement('body');
     }
 
     handleClick = (boxNumber: number, value: string) => {
