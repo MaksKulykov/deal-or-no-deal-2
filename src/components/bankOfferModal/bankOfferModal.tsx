@@ -34,15 +34,17 @@ const BankOfferModal: React.FC<BankOfferModalProps> = ({isOpen, isGameFinish, ca
                         </div> :
                         <>
                             <div onClick={handleEndGame}
-                                 className="w-[40%] border-none rounded px-8 py-4 font-bold text-xl text-boxValPr
-                                 bg-gradient-to-b from-buttonPr to-buttonSec hover:bg-gradient-to-b hover:from-buttonSec
+                                 className="w-[40%] border-none rounded 2xl:px-8 xl:px-6 lg:px-5 md:px-4 sm:px-2 py-4
+                                 font-bold xl:text-xl lg:text-lg md:text-md sm:text-sm text-boxValPr bg-gradient-to-b
+                                 from-buttonPr to-buttonSec hover:bg-gradient-to-b hover:from-buttonSec
                                  hover:to-buttonPr text-center cursor-pointer"
                                  data-testid="modal-deal-button">
                                 DEAL
                             </div>
                             <div onClick={handleCloseModal}
-                                 className="w-[40%] border-none rounded px-8 py-4 font-bold text-xl text-boxValPr
-                                 bg-gradient-to-b from-buttonPr to-buttonSec hover:bg-gradient-to-b hover:from-buttonSec
+                                 className="w-[40%] border-none rounded 2xl:px-8 xl:px-6 lg:px-5 md:px-4 sm:px-2 py-4
+                                 font-bold xl:text-xl lg:text-lg md:text-md sm:text-sm text-boxValPr bg-gradient-to-b
+                                 from-buttonPr to-buttonSec hover:bg-gradient-to-b hover:from-buttonSec
                                  hover:to-buttonPr text-center cursor-pointer"
                                  data-testid="modal-no-deal-button">
                                 NO DEAL
@@ -74,14 +76,14 @@ const modalStyles: Modal.Styles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        maxWidth: '550px',
+        maxWidth: '30%',
         width: '100%',
-        maxHeight: '360px',
+        maxHeight: '40%',
         height: '100%',
-        padding: '16px',
-        paddingBottom: '16px',
+        padding: '1rem',
+        paddingBottom: '1rem',
         background: 'linear-gradient(#ffd700,#b8860b)',
         border: 'none',
-        borderRadius: '8px'
+        borderRadius: '0.5rem'
     }
 };

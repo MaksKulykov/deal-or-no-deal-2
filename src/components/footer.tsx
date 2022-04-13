@@ -12,7 +12,8 @@ const Footer: React.FC<FooterProps> = ({children, disabled, boxCounter}) => {
             <div style={{ visibility: disabled || boxCounter === 0 ? 'hidden' : 'visible'}}
                  className="flex self-center w-full h-[20vh]"
                  data-testid="footer-wrapper">
-                <div className="text-boxBodySec text-5xl font-bold self-center w-1/2 p-[100px]"
+                <div className="text-boxBodySec 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-lg font-bold
+                self-center w-2/3 p-[100px]"
                      data-testid="footer-counter">
                     Choose {boxCounter} {boxCounter > 1 ? 'boxes' : 'box'}
                 </div>

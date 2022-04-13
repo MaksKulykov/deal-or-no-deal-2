@@ -7,8 +7,7 @@ interface SideBarProps {
 const SideBar: React.FC<SideBarProps> = ({children}) => {
     return (
         <>
-            <div className="flex justify-center flex-col flex-nowrap flex-grow items-center w-auto min-w-[200px]
-                    h-screen p-2 pb-10"
+            <div className="flex justify-center flex-col flex-nowrap flex-grow items-center w-2/12 h-screen p-2 pb-10"
                  data-testid="side-bar-wrapper">
                 { children }
             </div>
